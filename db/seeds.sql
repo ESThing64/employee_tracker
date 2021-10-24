@@ -7,5 +7,6 @@ VALUES ("Strategy"),
         ("Operations");
 
 
-INSERT INTO role (title, salary, department_id)
-VALUES ("Manager", "60000.00");
+INSERT INTO role_name (title, salary, department_id)
+VALUES ("Floor Manager", 600.00, 6),
+        ("Executive", 1000.00, 6);

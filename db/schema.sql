@@ -9,7 +9,7 @@ CREATE TABLE department (
   PRIMARY KEY (id)
 );
 
-CREATE TABLE role (
+CREATE TABLE role_name (
   id INT NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (id),
   title VARCHAR(30) NOT NULL,
@@ -26,7 +26,7 @@ CREATE TABLE employee (
   last_name VARCHAR(30) NOT NULL,
   role_id INT,
   FOREIGN KEY (role_id)
-  REFERENCES role(id),
+  REFERENCES role_name(id),
   manager_id INT,
   FOREIGN KEY (manager_id)
   REFERENCES employee(id)
