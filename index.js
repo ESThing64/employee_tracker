@@ -1,6 +1,8 @@
 const inquirer = require('inquirer');
 const { initial } = require('lodash');
-const server = require("./server")
+const server = require("./server");
+let answer;
+
 
 
 
@@ -36,13 +38,15 @@ function init() {
 
                 case "View all departments":
                     server.viewDep()
+                    answer = "department"
+                    console.log(answer)
                     init();
 
                     break;
 
                 case "View all roles":
-                    console.log('hey')
-
+                    answer = "role_name"
+                    console.log(answer)
                     server.viewRoles();
                     init();
 
@@ -51,9 +55,11 @@ function init() {
 
 
                 case "View all employees":
-                    server.viewEmp(function () {
+                    answer = "employee"
+                    console.log(answer)
+                    server.viewEmp() 
                         init();
-                    });
+                    
                     break;
 
 
