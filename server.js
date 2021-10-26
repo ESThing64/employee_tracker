@@ -2,7 +2,7 @@
 // Import and require mysql2
 const mysql = require('mysql2');
 const index = require("./index")
-const init = require("./index")
+
 let add;
 
 
@@ -27,6 +27,7 @@ exports.viewDep = () => {
     if (err) {
       console.error(err)
     } else {
+      console.log('\n \nHere are all the deparments \n \n')
       console.table(results);
       
       return;
@@ -41,6 +42,7 @@ exports.viewEmp = () => {
     if (err) {
       console.error(err)
     } else {
+      console.log('\n \nHere are all the employees \n \n')
       console.table(results);
       return;
     }
@@ -54,6 +56,7 @@ exports.viewRoles = () => {
     if (err) {
       console.error(err)
     } else {
+      console.log("\n \n Here are the all the roles \n \n")
       console.table(results);
       return
     }
@@ -71,7 +74,7 @@ exports.hAddDep = () => {
     if (err) {
       console.error(err)
     } else {
-      console.log(`${add} was added to your list of departments.`);
+      console.log(`\n \n ${add} was added to your list of departments.\n \n`);
       index.exInit()
       
       return;
@@ -95,7 +98,7 @@ exports.addRole = () => {
     if (err) {
       console.error(err)
     } else {
-      console.log(results);
+      console.log(`\n \n The role ${role_title} was added. The salary is ${role_salary} and their department id is ${role_dep_id}\n \n`);
       index.exInit()
       return;
     }
@@ -117,7 +120,7 @@ exports.addEmp = () => {
     if (err) {
       console.error(err)
     } else {
-      console.log(results);
+      console.log(`\n \n ${emp_fname} ${emp_lname} was added. Their role id is ${emp_role_id}\n \n`);
       index.exInit()
       return;
     }

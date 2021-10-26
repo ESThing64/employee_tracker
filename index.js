@@ -69,7 +69,6 @@ init = () => {
 
 
                 case "Add a role":
-                    console.log('hey')
                     addRole();
                     break;
 
