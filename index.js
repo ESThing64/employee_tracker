@@ -26,8 +26,6 @@ const questions = [
 
 function init() {
 
-
-
     inquirer
         .prompt(questions)
 
@@ -57,19 +55,68 @@ function init() {
                 case "View all employees":
                     answer = "employee"
                     console.log(answer)
-                    server.viewEmp() 
-                        init();
+                    server.viewEmp()
+                    init();
+
+                    break;
+
+
+                case "Add a department":
+                    addDep();
+                    break;
+
                     
+
+                case "Add a role":
+                    addRole();
+                    break;
+
+
+                case "Add an employee":
+                    addEmp();
+                    break;
+
+
+                case "Update an employee role":
+                    updateRole();
+                    break;
+
+
+                case "Add a department":
+                    addDep();
                     break;
 
 
 
+
             };
+        })
+        .catch((error) => {
+            if (error.isTtyError) {
+                // Prompt couldn't be rendered in the current environment
+            } else {
+                // Something else went wrong
+            }
+        });
+};
 
+function addDep() {
 
+    inquirer
+        .prompt([{
+            type: 'input',
+            message: "Please input the a department name",
+            name: "menu_dep",
 
+        }
 
+        ])
+        .then((answers) => {
+            exports.answer = () => {
+                return answers.menu_dep
+            }
 
+            server.hAddDep()
 
 
         })
@@ -80,6 +127,100 @@ function init() {
                 // Something else went wrong
             }
         });
-};
+
+}
+
+function addRole() {
+
+    inquirer
+        .prompt([{
+            type: 'input',
+            message: "Please input the a department name",
+            name: "menu_dep",
+
+        }
+
+        ])
+        .then((answers) => {
+            exports.answer = () => {
+                return answers.menu_dep
+            }
+
+            server.hAddDep()
+
+
+        })
+        .catch((error) => {
+            if (error.isTtyError) {
+                // Prompt couldn't be rendered in the current environment
+            } else {
+                // Something else went wrong
+            }
+        });
+
+}
+
+function addEmp() {
+
+    inquirer
+        .prompt([{
+            type: 'input',
+            message: "Please input the a department name",
+            name: "menu_dep",
+
+        }
+
+        ])
+        .then((answers) => {
+            exports.answer = () => {
+                return answers.menu_dep
+            }
+
+            server.hAddDep()
+
+
+        })
+        .catch((error) => {
+            if (error.isTtyError) {
+                // Prompt couldn't be rendered in the current environment
+            } else {
+                // Something else went wrong
+            }
+        });
+
+}
+
+function updateRole() {
+
+    inquirer
+        .prompt([{
+            type: 'input',
+            message: "Please input the a department name",
+            name: "menu_dep",
+
+        }
+
+        ])
+        .then((answers) => {
+            exports.answer = () => {
+                return answers.menu_dep
+            }
+
+            server.hAddDep()
+
+
+        })
+        .catch((error) => {
+            if (error.isTtyError) {
+                // Prompt couldn't be rendered in the current environment
+            } else {
+                // Something else went wrong
+            }
+        });
+
+}
+
+
+
 
 init()
