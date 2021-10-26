@@ -130,115 +130,115 @@ function addDep() {
 
 }
 
-function addRole() {
+// function addRole() {
 
-    inquirer
-        .prompt([
-            {
-                type: 'input',
-                message: "What's the title of the new role?",
-                name: "menu_dep",
+//     inquirer
+//         .prompt([
+//             {
+//                 type: 'input',
+//                 message: "What's the title of the new role?",
+//                 name: "menu_dep",
 
-            },
-            {
-                type: 'input',
-                message: "What's the salary?",
-                name: "menu_dep",
+//             },
+//             {
+//                 type: 'input',
+//                 message: "What's the salary?",
+//                 name: "menu_dep",
 
-            },
-            {
-                type: 'input',
-                message: "Please enter the department's id.",
-                name: "menu_dep",
+//             },
+//             {
+//                 type: 'input',
+//                 message: "Please enter the department's id.",
+//                 name: "menu_dep",
 
-            },
-
-
+//             },
 
 
 
 
 
 
-        ])
-        .then((answers) => {
-            exports.answer = () => {
-                return answers.menu_dep
-            }
-
-            server.hAddDep()
 
 
-        })
-        .catch((error) => {
-            if (error.isTtyError) {
-                // Prompt couldn't be rendered in the current environment
-            } else {
-                // Something else went wrong
-            }
-        });
+//         ])
+//         .then((answers) => {
+//             exports.answer = () => {
+//                 return answers.menu_dep
+//             }
 
-}
-
-function addEmp() {
-
-    inquirer
-        .prompt([{
-            type: 'input',
-            message: "Please input the a department name",
-            name: "menu_dep",
-
-        }
-
-        ])
-        .then((answers) => {
-            exports.answer = () => {
-                return answers.menu_dep
-            }
-
-            server.hAddDep()
+//             server.hAddDep()
 
 
-        })
-        .catch((error) => {
-            if (error.isTtyError) {
-                // Prompt couldn't be rendered in the current environment
-            } else {
-                // Something else went wrong
-            }
-        });
+//         })
+//         .catch((error) => {
+//             if (error.isTtyError) {
+//                 // Prompt couldn't be rendered in the current environment
+//             } else {
+//                 // Something else went wrong
+//             }
+//         });
 
-}
+// }
 
-function updateRole() {
+// function addEmp() {
 
-    inquirer
-        .prompt([{
-            type: 'input',
-            message: "Please input the a department name",
-            name: "menu_dep",
+//     inquirer
+//         .prompt([{
+//             type: 'input',
+//             message: "Please input the a department name",
+//             name: "menu_dep",
 
-        }
+//         }
 
-        ])
-        .then((answers) => {
-            exports.answer = () => {
-                return answers.menu_dep
-            }
+//         ])
+//         .then((answers) => {
+//             exports.answer = () => {
+//                 return answers.menu_dep
+//             }
 
-            server.hAddDep()
+//             server.hAddDep()
 
 
-        })
-        .catch((error) => {
-            if (error.isTtyError) {
-                // Prompt couldn't be rendered in the current environment
-            } else {
-                // Something else went wrong
-            }
-        });
+//         })
+//         .catch((error) => {
+//             if (error.isTtyError) {
+//                 // Prompt couldn't be rendered in the current environment
+//             } else {
+//                 // Something else went wrong
+//             }
+//         });
 
-}
+// }
+
+// function updateRole() {
+
+//     inquirer
+//         .prompt([{
+//             type: 'input',
+//             message: "Please input the a department name",
+//             name: "menu_dep",
+
+//         }
+
+//         ])
+//         .then((answers) => {
+//             exports.answer = () => {
+//                 return answers.menu_dep
+//             }
+
+//             server.hAddDep()
+
+
+//         })
+//         .catch((error) => {
+//             if (error.isTtyError) {
+//                 // Prompt couldn't be rendered in the current environment
+//             } else {
+//                 // Something else went wrong
+//             }
+//         });
+
+// }
 
 
 

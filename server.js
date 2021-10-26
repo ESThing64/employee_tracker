@@ -2,6 +2,7 @@
 // Import and require mysql2
 const mysql = require('mysql2');
 const index = require("./index")
+let add;
 
 
 
@@ -61,12 +62,16 @@ exports.viewRoles = () => {
 
 
 
-exports.addDep = () => {
-  db.query('INSERT INTO department SET ?', function (err, results) {
+exports.hAddDep = () => {
+  add = index.answer()
+  db.query("INSERT INTO department SET ?", {
+    dep_name: index.answer()
+  }, function (err, results) {
+
     if (err) {
       console.error(err)
     } else {
-      console.log(results);
+      console.log(`${add} was added to your list of departments.`);
       return;
     }
 
@@ -74,44 +79,46 @@ exports.addDep = () => {
 
 };
 
-exports.addRole = () => {
-  db.query('INSERT INTO department SET ?', function (err, results) {
-    if (err) {
-      console.error(err)
-    } else {
-      console.log(results);
-      return;
-    }
 
-  });
 
-};
+// exports.addRole = () => {
+//   db.query('INSERT INTO department SET ?', function (err, results) {
+//     if (err) {
+//       console.error(err)
+//     } else {
+//       console.log(results);
+//       return;
+//     }
 
-exports.addEmp = () => {
-  db.query('INSERT INTO department SET ?', function (err, results) {
-    if (err) {
-      console.error(err)
-    } else {
-      console.log(results);
-      return;
-    }
+//   });
 
-  });
+// };
 
-};
+// exports.addEmp = () => {
+//   db.query('INSERT INTO department SET ?', function (err, results) {
+//     if (err) {
+//       console.error(err)
+//     } else {
+//       console.log(results);
+//       return;
+//     }
 
-exports.updateRole = () => {
-  db.query('INSERT INTO department SET ?', function (err, results) {
-    if (err) {
-      console.error(err)
-    } else {
-      console.log(results);
-      return;
-    }
+//   });
 
-  });
+// };
 
-};
+// exports.updateRole = () => {
+//   db.query('INSERT INTO department SET ?', function (err, results) {
+//     if (err) {
+//       console.error(err)
+//     } else {
+//       console.log(results);
+//       return;
+//     }
+
+//   });
+
+// };
 
 
 
