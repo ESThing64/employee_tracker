@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/ESThing64/employee_tracker#readme",
   "dependencies": {
+    "console.table": "^0.10.0",
     "express": "^4.17.1",
     "i": "^0.3.7",
     "inquirer": "^8.2.0",

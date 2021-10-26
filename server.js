@@ -27,7 +27,7 @@ exports.viewDep = () => {
     if (err) {
       console.error(err)
     } else {
-      console.log(results);
+      console.table(results);
       
       return;
     }
@@ -41,7 +41,7 @@ exports.viewEmp = () => {
     if (err) {
       console.error(err)
     } else {
-      console.log(results);
+      console.table(results);
       return;
     }
 
@@ -54,15 +54,13 @@ exports.viewRoles = () => {
     if (err) {
       console.error(err)
     } else {
-      console.log(results);
+      console.table(results);
       return
     }
 
   });
 
 };
-
-
 
 exports.hAddDep = () => {
   add = index.answer()
@@ -74,7 +72,7 @@ exports.hAddDep = () => {
       console.error(err)
     } else {
       console.log(`${add} was added to your list of departments.`);
-      index.init()
+      index.exInit()
       
       return;
     }
@@ -82,8 +80,6 @@ exports.hAddDep = () => {
   });
 
 };
-
-
 
 exports.addRole = () => {
   add = index.answer()
@@ -100,7 +96,7 @@ exports.addRole = () => {
       console.error(err)
     } else {
       console.log(results);
-      index.init()
+      index.exInit()
       return;
     }
 
@@ -122,7 +118,7 @@ exports.addEmp = () => {
       console.error(err)
     } else {
       console.log(results);
-      index.init()
+      index.exInit()
       return;
     }
 
