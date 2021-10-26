@@ -74,7 +74,7 @@ exports.addDep = () => {
 
 };
 
-exports.addDep = () => {
+exports.addRole = () => {
   db.query('INSERT INTO department SET ?', function (err, results) {
     if (err) {
       console.error(err)
@@ -86,6 +86,35 @@ exports.addDep = () => {
   });
 
 };
+
+exports.addEmp = () => {
+  db.query('INSERT INTO department SET ?', function (err, results) {
+    if (err) {
+      console.error(err)
+    } else {
+      console.log(results);
+      return;
+    }
+
+  });
+
+};
+
+exports.updateRole = () => {
+  db.query('INSERT INTO department SET ?', function (err, results) {
+    if (err) {
+      console.error(err)
+    } else {
+      console.log(results);
+      return;
+    }
+
+  });
+
+};
+
+
+
 
 
 

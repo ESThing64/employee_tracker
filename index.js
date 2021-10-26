@@ -65,7 +65,7 @@ function init() {
                     addDep();
                     break;
 
-                    
+
 
                 case "Add a role":
                     addRole();
@@ -133,12 +133,32 @@ function addDep() {
 function addRole() {
 
     inquirer
-        .prompt([{
-            type: 'input',
-            message: "Please input the a department name",
-            name: "menu_dep",
+        .prompt([
+            {
+                type: 'input',
+                message: "What's the title of the new role?",
+                name: "menu_dep",
 
-        }
+            },
+            {
+                type: 'input',
+                message: "What's the salary?",
+                name: "menu_dep",
+
+            },
+            {
+                type: 'input',
+                message: "Please enter the department's id.",
+                name: "menu_dep",
+
+            },
+
+
+
+
+
+
+
 
         ])
         .then((answers) => {
