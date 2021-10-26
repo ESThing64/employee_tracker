@@ -2,6 +2,7 @@
 // Import and require mysql2
 const mysql = require('mysql2');
 const index = require("./index")
+const init = require("./index")
 let add;
 
 
@@ -27,6 +28,7 @@ exports.viewDep = () => {
       console.error(err)
     } else {
       console.log(results);
+      
       return;
     }
 
@@ -72,6 +74,8 @@ exports.hAddDep = () => {
       console.error(err)
     } else {
       console.log(`${add} was added to your list of departments.`);
+      index.init()
+      
       return;
     }
 
@@ -81,31 +85,49 @@ exports.hAddDep = () => {
 
 
 
-// exports.addRole = () => {
-//   db.query('INSERT INTO department SET ?', function (err, results) {
-//     if (err) {
-//       console.error(err)
-//     } else {
-//       console.log(results);
-//       return;
-//     }
+exports.addRole = () => {
+  add = index.answer()
+  let {role_title, role_salary, role_dep_id } = add
+  
 
-//   });
+  db.query('INSERT INTO role_name SET ?', {
+    title: role_title,
+    salary: role_salary,
+    department_id: role_dep_id
 
-// };
+  }, function (err, results) {
+    if (err) {
+      console.error(err)
+    } else {
+      console.log(results);
+      index.init()
+      return;
+    }
 
-// exports.addEmp = () => {
-//   db.query('INSERT INTO department SET ?', function (err, results) {
-//     if (err) {
-//       console.error(err)
-//     } else {
-//       console.log(results);
-//       return;
-//     }
+  });
 
-//   });
+};
 
-// };
+exports.addEmp = () => {
+  add = index.answer()
+  let {emp_fname, emp_lname, emp_role_id} = add
+  db.query('INSERT INTO department SET ?', {
+    first_name: emp_,
+    last_name:  emp_,
+    role_id:  emp_
+
+  }, function (err, results) {
+    if (err) {
+      console.error(err)
+    } else {
+      console.log(results);
+      index.init()
+      return;
+    }
+
+  });
+
+};
 
 // exports.updateRole = () => {
 //   db.query('INSERT INTO department SET ?', function (err, results) {
