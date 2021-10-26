@@ -108,7 +108,6 @@ exports.addRole = () => {
 };
 
 exports.addEmp = () => {
-  console.log("its in the emp function")
   add = index.answer()
   let {emp_fname, emp_lname, emp_role_id} = add
   db.query('INSERT INTO employee SET ?', {
@@ -128,19 +127,35 @@ exports.addEmp = () => {
   });
 
 };
+exports.updateRole = () => {
+  add = index.answer()
+  console.log(add)
+  let {emp_up_id, emp_up_role} = add
+  db.query('SELECT * FROM employee; UPDATE employee SET ? WHERE ?', {
+    id: emp_up_id,
+    role_id:  emp_up_role
 
-// exports.updateRole = () => {
-//   db.query('INSERT INTO department SET ?', function (err, results) {
-//     if (err) {
-//       console.error(err)
-//     } else {
-//       console.log(results);
-//       return;
-//     }
+  }, function (err, results) {
+    if (err) {
+      console.error(err)
+    } else {
+      console.log(`\n \n done\n \n`);
 
-//   });
 
-// };
+      index.exInit()
+      return;
+    }
+
+  });
+
+};
+
+
+
+
+
+// 
+
 
 
 
