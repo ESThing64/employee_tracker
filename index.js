@@ -281,7 +281,7 @@ function addEmp() {
         ])
         .then((answers) => {
             exports.answer = () => {
-                return answers.menu_dep
+                return answers
             }
 
             server.addEmp()

@@ -109,12 +109,13 @@ exports.addRole = () => {
 };
 
 exports.addEmp = () => {
+  console.log("its in the emp function")
   add = index.answer()
   let {emp_fname, emp_lname, emp_role_id} = add
-  db.query('INSERT INTO department SET ?', {
-    first_name: emp_,
-    last_name:  emp_,
-    role_id:  emp_
+  db.query('INSERT INTO employee SET ?', {
+    first_name: emp_fname,
+    last_name:  emp_lname,
+    role_id:  emp_role_id
 
   }, function (err, results) {
     if (err) {
