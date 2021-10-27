@@ -131,11 +131,14 @@ exports.updateRole = () => {
   add = index.answer()
   console.log(add)
   let {emp_up_id, emp_up_role} = add
-  db.query('SELECT * FROM employee; UPDATE employee SET ? WHERE ?', {
-    id: emp_up_id,
+  db.query('UPDATE employee SET ? WHERE ?', [{
+    // id: emp_up_id,
     role_id:  emp_up_role
 
-  }, function (err, results) {
+  },{ id: emp_up_id,
+
+  }], function (err, results) {
+
     if (err) {
       console.error(err)
     } else {
